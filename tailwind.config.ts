@@ -6,34 +6,30 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  darkMode: 'class', // Wajib 'class' agar ThemeProvider bekerja
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        // --- Dark Mode Colors (Railway.app inspired) ---
         dark: {
-          bg: '#0a0a0a',          // Deep charcoal background
-          surface: '#141414',     // Slightly lighter surface
-          card: '#1a1a1a',        // Card background
-          border: '#2a2a2a',      // Border color
-          hover: '#252525',       // Hover state
+          bg: '#0a0a0a',
+          surface: '#141414',
+          card: '#1a1a1a',
+          border: '#2a2a2a',
+          hover: '#252525',
         },
-        // --- Light Mode Colors ---
         light: {
-          bg: '#ffffff',          // Pure white background
-          surface: '#f8f9fa',     // Light gray surface
-          card: '#ffffff',        // Card background
-          border: '#e5e7eb',      // Border color
-          hover: '#f3f4f6',       // Hover state
+          bg: '#ffffff',
+          surface: '#f8f9fa',
+          card: '#ffffff',
+          border: '#e5e7eb',
+          hover: '#f3f4f6',
         },
-        // --- Accent Colors ---
         accent: {
-          primary: '#8b5cf6',      // Vibrant purple
-          secondary: '#6366f1',    // Indigo
-          hover: '#a78bfa',        // Lighter purple
+          primary: '#8b5cf6',
+          secondary: '#6366f1',
+          hover: '#a78bfa',
           glow: 'rgba(139, 92, 246, 0.3)', 
         },
-        // --- Text Colors ---
         text: {
           dark: {
             primary: '#f5f5f5',    
@@ -47,10 +43,13 @@ const config: Config = {
           },
         },
       },
-      // Animasi tambahan
+      // --- ANIMATION CONFIGURATION ---
       animation: {
         'float': 'float 6s ease-in-out infinite',
         'gradient': 'gradient 8s linear infinite',
+        'meteor': 'meteor 5s linear infinite',
+        'scroll': 'scroll 40s linear infinite', // Animasi Scroll Lambat
+        'scroll-reverse': 'scroll-reverse 40s linear infinite', // Scroll Arah Sebaliknya
       },
       keyframes: {
         float: {
@@ -60,6 +59,23 @@ const config: Config = {
         gradient: {
           '0%, 100%': { 'background-position': 'left center' },
           '50%': { 'background-position': 'right center' },
+        },
+        meteor: {
+          "0%": { transform: "rotate(215deg) translateX(0)", opacity: "1" },
+          "70%": { opacity: "1" },
+          "100%": {
+            transform: "rotate(215deg) translateX(-500px)",
+            opacity: "0",
+          },
+        },
+        // --- KEYFRAMES SCROLL ---
+        scroll: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-100%)" },
+        },
+        "scroll-reverse": {
+          from: { transform: "translateX(-100%)" },
+          to: { transform: "translateX(0)" },
         },
       },
     },
