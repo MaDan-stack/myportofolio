@@ -138,25 +138,28 @@ export default function Home() {
 
           {/* Buttons dengan Magnetic Effect */}
           <motion.div
-            className="flex flex-col sm:flex-row gap-6 justify-center items-center"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-          >
-            <MagneticButton 
-              href="#projects"
-              className="px-8 py-4 rounded-full font-medium bg-accent-primary hover:bg-accent-hover text-white shadow-lg shadow-accent-primary/25 hover:shadow-accent-primary/40"
-            >
-              View My Work
-            </MagneticButton>
+  className="flex flex-col sm:flex-row gap-6 justify-center items-center"
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.5, delay: 0.5 }}
+>
+  <MagneticButton 
+    href="#projects"
+    className="px-8 py-4 rounded-full font-medium bg-accent-primary hover:bg-accent-hover text-white shadow-lg shadow-accent-primary/25 hover:shadow-accent-primary/40"
+  >
+    Lihat Proyek
+  </MagneticButton>
 
-            <MagneticButton 
-              href="#contact"
-              className="px-8 py-4 rounded-full font-medium border border-accent-primary/30 text-accent-primary hover:bg-accent-primary/10 dark:text-white backdrop-blur-md"
-            >
-              Contact Me
-            </MagneticButton>
-          </motion.div>
+  {/* Ganti Contact Me jadi Download CV atau buat tombol ketiga */}
+  <MagneticButton 
+    href="/cv_muhammad_nur_ramadhan.pdf" // Pastikan file PDF ada di folder public
+    target="_blank" // Membuka di tab baru
+    className="px-8 py-4 rounded-full font-medium border border-accent-primary/30 text-accent-primary hover:bg-accent-primary/10 dark:text-white backdrop-blur-md flex items-center gap-2"
+  >
+    <span>Download CV</span>
+    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+  </MagneticButton>
+</motion.div>
         </div>
       </section>
 

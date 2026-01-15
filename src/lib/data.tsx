@@ -13,8 +13,9 @@ import {
   SiGit, 
   SiFigma, 
   SiVercel,
-  SiStripe,
-  SiFirebase
+  SiPostman,
+  SiMysql,
+  SiPrisma
 } from "react-icons/si";
 
 // --- INTERFACES ---
@@ -38,9 +39,9 @@ export interface ProfileData {
   bio: string;
   email: string;
   phone: string;
-  github?: string;
-  linkedin?: string;
-  twitter?: string;
+  github: string;
+  linkedin: string;
+  instagram?: string;
 }
 
 export interface Certificate {
@@ -63,87 +64,73 @@ export const profileData: ProfileData = {
   nickname: "Madan",
   title: "Junior FullStack Developer",
   avatar: "/fotoku.jpeg", 
-  bio: "Passionate about building beautiful, performant web experiences with modern technologies. Specializing in React, Next.js, and creating delightful user interfaces.",
+  // Bio diperbarui agar lebih menjual
+  bio: "Mahasiswa Informatika yang fokus pada Web Development. Berpengalaman membangun aplikasi Fullstack menggunakan Next.js dan Node.js. Suka memecahkan masalah kompleks dan menciptakan UI yang interaktif serta performa tinggi.",
   email: "26oktoberramadhan@gmail.com",
   phone: "+6283141931776",
-  github: "https://github.com/johndoe",
-  linkedin: "https://linkedin.com/in/johndoe",
-  twitter: "https://twitter.com/johndoe",
+  github: "https://github.com/madan-stack", 
+  linkedin: "https://linkedin.com/in/muhammad-nur-ramadhan", // Pastikan link ini benar atau edit
+  instagram: "https://instagram.com/madan_stack",
 };
 
 export const projects: Project[] = [
   {
     id: 1,
-    title: "E-Commerce Platform",
-    description: "A full-featured e-commerce platform with shopping cart, payment integration, and admin dashboard.",
-    technologies: ["Next.js", "TypeScript", "Tailwind", "Stripe"],
-    imageUrl: "/projects/ecommerce.jpg",
-    demoUrl: "https://demo.example.com",
-    githubUrl: "https://github.com/johndoe/ecommerce",
+    title: "Katalog Restoran PWA",
+    description: "Aplikasi katalog restoran dengan fitur Progressive Web App (PWA), favorite restaurant (IDB), dan End-to-End Testing.",
+    technologies: ["JavaScript", "PWA", "Webpack", "Jasmine"],
+    imageUrl: "/projects/restaurant.jpg", // Pastikan file gambar ada di public/projects/
+    demoUrl: "https://restaurant-apps.vercel.app", 
+    githubUrl: "https://github.com/madan-stack/restaurant-apps",
     featured: true,
   },
   {
     id: 2,
-    title: "Task Management App",
-    description: "Collaborative task management application with real-time updates and team collaboration features.",
-    technologies: ["React", "Firebase", "Framer Motion"],
-    imageUrl: "/projects/taskapp.jpg",
-    demoUrl: "https://taskapp.example.com",
-    githubUrl: "https://github.com/johndoe/taskapp",
+    title: "E-Commerce Dashboard",
+    description: "Platform manajemen produk untuk UMKM dengan fitur CRUD, upload gambar, dan manajemen stok real-time.",
+    technologies: ["Next.js", "TypeScript", "Prisma", "Tailwind"],
+    imageUrl: "/projects/ecommerce.jpg",
+    demoUrl: "https://demo-ecommerce.vercel.app",
+    githubUrl: "https://github.com/madan-stack/ecommerce",
     featured: true,
   },
   {
     id: 3,
-    title: "Weather Dashboard",
-    description: "Beautiful weather dashboard with real-time data, 7-day forecast, and interactive maps.",
-    technologies: ["Next.js", "OpenWeather API", "Chart.js"],
-    imageUrl: "/projects/weather.jpg",
-    githubUrl: "https://github.com/johndoe/weather",
+    title: "Notes App API",
+    description: "RESTful API untuk aplikasi catatan menggunakan Hapi.js dengan fitur autentikasi dan otorisasi.",
+    technologies: ["Node.js", "Hapi.js", "Postman", "EC2"],
+    imageUrl: "/projects/api-project.jpg",
+    githubUrl: "https://github.com/madan-stack/notes-api",
     featured: false,
   },
-  
 ];
 
 export const certificates: Certificate[] = [
   {
     id: 1,
-    name: "Belajar Membuat Front-End Web untuk Pemula",
-    issuer: "Dicoding Indonesia",
-    date: "17 September 2025",
-    url: "https://www.dicoding.com/certificates/L4PQ28R4OZO1",
-  },
-  {
-    id: 2,
     name: "Belajar Fundamental Back-End dengan JavaScript",
     issuer: "Dicoding Indonesia",
     date: "30 November 2025",
     url: "https://www.dicoding.com/certificates/0LZ05MN53X65",
   },
   {
+    id: 2,
+    name: "Belajar Membuat Front-End Web untuk Pemula",
+    issuer: "Dicoding Indonesia",
+    date: "17 September 2025",
+    url: "https://www.dicoding.com/certificates/L4PQ28R4OZO1",
+  },
+  {
     id: 3,
     name: "JavaScript Algorithms and Data Structures",
     issuer: "freeCodeCamp",
     date: "Nov 2023",
-    url: "#",
-  },
-  {
-    id: 4,
-    name: "JavaScript Algorithms and Data Structures",
-    issuer: "freeCodeCamp",
-    date: "Nov 2023",
-    url: "#",
-  },
-  {
-    id: 5,
-    name: "JavaScript Algorithms and Data Structures",
-    issuer: "freeCodeCamp",
-    date: "Nov 2023",
-    url: "#",
+    url: "#", 
   },
 ];
 
 export const skillsData: { row1: SkillItem[]; row2: SkillItem[] } = {
-  // Baris 1: Frontend
+  // Baris 1: Frontend & Core
   row1: [
     { name: "React", icon: <SiReact className="w-6 h-6 text-[#61DAFB]" /> },
     { name: "Next.js", icon: <SiNextdotjs className="w-6 h-6 text-black dark:text-white" /> },
@@ -151,12 +138,12 @@ export const skillsData: { row1: SkillItem[]; row2: SkillItem[] } = {
     { name: "Tailwind CSS", icon: <SiTailwindcss className="w-6 h-6 text-[#38BDF8]" /> },
     { name: "Framer Motion", icon: <SiFramer className="w-6 h-6 text-black dark:text-white" /> },
   ],
-  // Baris 2: Backend & Tools
+  // Baris 2: Backend, Database & Tools (Diperkaya)
   row2: [
     { name: "Node.js", icon: <SiNodedotjs className="w-6 h-6 text-[#339933]" /> },
-    { name: "JavaScript", icon: <SiJavascript className="w-6 h-6 text-[#F7DF1E]" /> },
+    { name: "MySQL", icon: <SiMysql className="w-6 h-6 text-[#00758F]" /> },
+    { name: "Prisma", icon: <SiPrisma className="w-6 h-6 text-[#2D3748] dark:text-white" /> },
     { name: "Git", icon: <SiGit className="w-6 h-6 text-[#F05032]" /> },
-    { name: "Figma", icon: <SiFigma className="w-6 h-6 text-[#F24E1E]" /> },
-    { name: "Vercel", icon: <SiVercel className="w-6 h-6 text-black dark:text-white" /> },
+    { name: "Postman", icon: <SiPostman className="w-6 h-6 text-[#FF6C37]" /> },
   ],
 };
